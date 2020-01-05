@@ -22,7 +22,7 @@ public class Utils {
         }
     }
 
-    public static Class loadClass(String name) {
+    public static Class<?> loadClass(String name) {
         try {
             return Class.forName("bg.daniel.review.units."+name);
         } catch (ClassNotFoundException e) {

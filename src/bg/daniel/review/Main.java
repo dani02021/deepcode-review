@@ -6,6 +6,7 @@ public class Main {
      * @author Daniel Gyudzhenev
      * @version 1.0.0-SNAPSHOT
      *
+     * Description:
      * Testing the compatibilities of DeepCode with different code examples
      * For more information visit: deepcode.ai
      */
@@ -17,10 +18,12 @@ public class Main {
     }
 
     public static void displayMain() {
-        System.out.println("Please select one of the following:");
-        System.out.println("(1) Select unit tests");
-        System.out.println("(2) Settings");
-        System.out.println("(3) Exit");
+        String message = "Please select one of the following:" + "\n" +
+        				"(1) Select unit tests" + "\n" +
+        				"(2) Settings" + "\n" +
+        				"(3) Exit";
+        
+        System.out.println(message);
 
         int result = -1;
 
@@ -28,7 +31,7 @@ public class Main {
             result = Utils.readNumber(4);
 
             if(result <= 0) {
-                System.out.println("Bad input, please try again!");
+                System.out.println(message);
             } else if(result == 1) {
                 UnitManager.displayAllUnits();
             } else if(result == 2) {

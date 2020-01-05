@@ -6,6 +6,8 @@ public class UnitManager {
     private static void loadUnit(int result) {
         try {
             UnitTest unit = (UnitTest) Utils.loadClass(Unit.values()[result].getClassName()).newInstance();
+            
+            unit.init();
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }
@@ -26,7 +28,6 @@ public class UnitManager {
 
             if(result == -1) {
                 Main.displayMain();
-
                 break;
             } else if(result <= units.length) {
                 loadUnit(result-1);
